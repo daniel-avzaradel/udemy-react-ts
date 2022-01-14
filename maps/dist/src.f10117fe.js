@@ -136895,6 +136895,10 @@ function () {
     };
   }
 
+  User.prototype.markerContent = function () {
+    return "\n        <p>User Name: ".concat(this.name, "</p>\n      ");
+  };
+
   return User;
 }();
 
@@ -136927,6 +136931,10 @@ function () {
     };
   }
 
+  Company.prototype.markerContent = function () {
+    return "\n      <div style=\"padding: 0px\">\n        <h2>Company Name: ".concat(this.companyName, "</h2>\n        <h3>Catch Phrase: ").concat(this.catchPhrase, "</h3>\n        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum temporibus eos cumque natus voluptatum possimus fuga placeat, id excepturi dolores eaque minus, exercitationem sit. Illo nostrum officia, neque quasi expedita voluptatum fugit minus sunt praesentium, similique qui repudiandae nisi labore minima in ad. Minus vel tempora culpa obcaecati, nostrum eligendi.</p>\n      </div>\n      ");
+  };
+
   return Company;
 }();
 
@@ -136953,12 +136961,20 @@ function () {
   }
 
   CustomMap.prototype.addMarker = function (mappable) {
-    new google.maps.Marker({
+    var _this = this;
+
+    var marker = new google.maps.Marker({
       map: this.googleMap,
       position: {
         lat: mappable.location.lat,
         lng: mappable.location.lng
       }
+    });
+    marker.addListener('click', function () {
+      var infoWindow = new google.maps.InfoWindow({
+        content: mappable.markerContent()
+      });
+      infoWindow.open(_this.googleMap, marker);
     });
   };
 
@@ -137012,7 +137028,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60541" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60752" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
