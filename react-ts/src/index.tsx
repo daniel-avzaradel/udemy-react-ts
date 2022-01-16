@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom';
-import Parent from './props/Parent';
-import Child from './props/Child';
+import { Parent } from './props/Parent';
+import { Child } from './props/Child';
 
 const App = () => {
   return (
