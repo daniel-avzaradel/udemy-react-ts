@@ -1,16 +1,10 @@
 import ReactDOM from 'react-dom';
-import { Parent } from './props/Parent';
-import { ChildAsFC } from './props/Child';
-import GuestList from './state/GuestList';
-import UserSearch from './state/UserSearch';
+import { EventComponent } from './events/EventComponent';
 
 const App = () => {
   return (
     <div>
-      <GuestList />
-      <br />
-      <br />
-      <UserSearch />
+      <EventComponent />
     </div>
   );
 };
