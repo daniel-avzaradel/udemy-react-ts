@@ -1,12 +1,16 @@
 import ReactDOM from 'react-dom';
 import { Parent } from './props/Parent';
-import { Child } from './props/Child';
+import { ChildAsFC } from './props/Child';
+import GuestList from './state/GuestList';
+import UserSearch from './state/UserSearch';
 
 const App = () => {
   return (
     <div>
-      <Parent />
-      <Child color="red" />
+      <GuestList />
+      <br />
+      <br />
+      <UserSearch />
     </div>
   );
 };
