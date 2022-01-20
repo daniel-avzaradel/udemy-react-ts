@@ -13,7 +13,7 @@ export const EventComponent: React.FC = () => {
     <div>
       <input type="text" onChange={(e) => console.log(e)} />
       <div draggable onDragStart={onDragStart}>
-        Drag me!
+        Drag me!!
       </div>
     </div>
   );
