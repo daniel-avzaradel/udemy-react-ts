@@ -4,7 +4,7 @@ interface RepositoryState {
   data: string[];
 }
 
-const reducer = (state: RepositoryState, action: any) => {
+const reducer = (state: RepositoryState, action: any): RepositoryState => {
   switch (action.type) {
     case 'search_repositories':
       return { loading: true, error: null, data: [] };
