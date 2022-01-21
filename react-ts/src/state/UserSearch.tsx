@@ -6,7 +6,7 @@ const users = [
   { name: 'Dave', age: 22 },
 ];
 
-function UserSearch() {
+const UserSearch: React.FC = () => {
   const [name, setName] = useState('');
   const [user, setUser] = useState<undefined | { name: string; age: number }>();
 
@@ -37,6 +37,6 @@ function UserSearch() {
       </div>
     </div>
   );
-}
+};
 
 export default UserSearch;
